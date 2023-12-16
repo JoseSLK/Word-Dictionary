@@ -133,8 +133,13 @@ public class BinaryTree<T> {
         list.add(node.getInfo());
     }
     public ArrayList<T> listAmplitudeDown(){
+        if( root == null ) {
+            return null;
+        }
         list = new ArrayList<>();
         ArrayDeque<TreeNode<T>> tail = new ArrayDeque<>();
+        System.out.println("This is root: "+ root.getInfo());
+
         tail.add( root );
 
         while ( !tail.isEmpty() ) {
@@ -188,14 +193,17 @@ public class BinaryTree<T> {
         }
     }
     private T deleteLeaf(TreeNode<T> node){
+        TreeNode<T> aux = node;
         TreeNode<T> position = findFather(node);
-        if( position.getRight() == node){
-            node.setRight(null);
+
+        if( position == null ){
+            root = null;
+        }else if( position.getRight() == node){
+            position.setRight(null);
+        }else if( position.getLeft() == node ){
+            position.setLeft(null);
         }
-        if( position.getLeft() == node ){
-            node.setLeft(null);
-        }
-        return node.getInfo();
+        return aux.getInfo();
     }
     private T deleteWithSon(TreeNode<T> node){
         TreeNode<T> position = findFather(node);

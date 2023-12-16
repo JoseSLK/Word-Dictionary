@@ -25,12 +25,20 @@ public class InputValidator {
     /**
      * Devuelve la primera letra de la palabra en mayuscula,
      * esto sera util para ubicar en el arreglo las palabras*/
-    public char getFirstLetter(String word){
+    public int getFirstLetter(String word){
         if( word.isEmpty() ) {
             return 0;
         }
-        return Character.toUpperCase(word.charAt(0));
+        return (int) Character.toUpperCase(word.charAt(0))-65;
     }
+
+    public String capitalizeFirstLetter(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        return Character.toUpperCase(str.charAt(0)) + str.substring(1);
+    }
+
     /**Verifica que una palabra no sea una sola letra y espacios*/
     public boolean isValidLetter(String input){
         return false;

@@ -11,6 +11,11 @@ public class Word {
         this.meaning = meaning;
         this.translation = translation;
     }
+
+    public Word(String word) {
+        this.word = word;
+    }
+
     public Word(){}
 
     public String getWord() {

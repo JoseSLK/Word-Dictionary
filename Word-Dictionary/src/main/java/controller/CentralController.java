@@ -17,4 +17,16 @@ public class CentralController {
         }
     }
 
+    public BinaryTree<Word> getDictionaryTree() {
+        return dictionaryTree;
+    }
+
+    public void setDictionaryTree(BinaryTree<Word> dictionaryTree) {
+        this.dictionaryTree = dictionaryTree;
+    }
+
+    public static BinaryTree<Word>[] getTreeLetters() {
+        return treeLetters;
+    }
+
 }
