@@ -21,6 +21,8 @@ public class DictionaryController {
         for (int i = 0; i < 26 ; i++) {
             treeLetters[i] = new BinaryTree<>((Comparator.comparing(Word::getWord)));
         }
+
+        loadData();
     }
 
     public BinaryTree<Word> getBinaryTree( int position){
@@ -39,9 +41,15 @@ public class DictionaryController {
         return listAllWords;
     }
 
-
-
-    public List<Word> getWordsByLetter(){
+    public List<String> getWordsByLetter(String letter){
+        List<String> out = new ArrayList<>();
+        if(treeLetters[inputValidator.getFirstLetter(letter)].listAmplitudeDown() != null){
+            List<Word> words =  treeLetters[inputValidator.getFirstLetter(letter)].listAmplitudeDown();
+            for ( Word word: words){
+                out.add(word.toString());
+            }
+            return out;
+        }
         return null;
     }
     public static BinaryTree<Word>[] getTreeLetters() {
@@ -54,5 +62,27 @@ public class DictionaryController {
 
     public void setWordController(WordController wordController) {
         this.wordController = wordController;
+    }
+
+    public InputValidator getInputValidator() {
+        return inputValidator;
+    }
+
+    public void setInputValidator(InputValidator inputValidator) {
+        this.inputValidator = inputValidator;
+    }
+
+    public void loadData(){
+        getWordController().addWord("Manzanas", "Apples", "Son frutas");
+        getWordController().addWord("Naranjas", "Oranges", "Son cítricos");
+        getWordController().addWord("Plátanos", "Bananas", "Son amarillos");
+        getWordController().addWord("Fresas", "Strawberries", "Son rojas");
+        getWordController().addWord("Uvas", "Grapes", "Son moradas");
+        getWordController().addWord("Mangos", "Mangoes", "Son tropicales");
+        getWordController().addWord("Piñas", "Pineapples", "Son espinosas");
+        getWordController().addWord("Melones", "Melons", "Son jugosos");
+        getWordController().addWord("Sandías", "Watermelons", "Son refrescantes");
+        getWordController().addWord("Cerezas", "Cherries", "Son dulces");
+        getWordController().addWord("anon", "anon", "Es un anon");
     }
 }

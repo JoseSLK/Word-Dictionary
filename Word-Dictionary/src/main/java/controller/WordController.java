@@ -22,6 +22,10 @@ public class WordController {
         word = inputValidator.capitalizeFirstLetter(word);
         BinaryTree<Word> binaryTree = getBinaryTree(inputValidator.getFirstLetter(word));
 
+        if (binaryTree.findNode(new Word(word, null, null)) != null) {
+            return false;
+        }
+
         binaryTree.addNode(new Word(word, traslation, meaning));
 
         if ( !binaryTree.isEmpty() ){

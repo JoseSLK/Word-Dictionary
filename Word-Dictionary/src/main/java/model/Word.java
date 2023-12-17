@@ -44,10 +44,8 @@ public class Word {
 
     @Override
     public String toString() {
-        return "Word{" +
-                "word='" + word + '\'' +
-                ", meaning='" + meaning + '\'' +
-                ", translation='" + translation + '\'' +
-                '}';
+        return "  " + word + " ||| " +
+                meaning + " ||| " +
+                translation + "|";
     }
 }
