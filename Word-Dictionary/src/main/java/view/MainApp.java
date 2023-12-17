@@ -8,25 +8,36 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-
+/**
+ * The MainApp class represents the main user interface of the dictionary application.
+ * It provides functionality for searching, modifying, deleting, and adding words to the dictionary.
+ */
 public class MainApp  extends JPanel implements ActionListener {
+    // JFrame instances for the main, modify, and add windows
     private JFrame main;
     private JFrame modify;
+    // JPanels for organizing the layout
     private JPanel rigth,up,down;
+    // Buttons for various actions
     private JButton searchButton, ShowListbyLetterButton, modifyWordButton,
             deleteWordButton, exitButton, addWordButton, listEveryWordsButton,
             addConfirmButton, cancelAddButton, confirmModifyButton, cancelButtom;
+    // TextFields for user input
     private JTextField field1;
-    private DefaultListModel model;
+    private JTextField field5,field6,field7,fieldx,fieldy;
     private JList list;
-
     private DictionaryController dic;
     private JFrame add;
     private JPanel panel5;
     private JPanel panel6;
-    private JTextField field5,field6,field7,fieldx,fieldy;
+    // Labels for guiding user input
     private JLabel label5,label6,label7,labelx,labely;
+    private DefaultListModel model;
 
+    /**
+     * Constructor for the MainApp class.
+     * Initializes the UI components and sets up action listeners.
+     */
     public MainApp(){
         main = new JFrame("Diccionario");
         modify = new JFrame("Diccionario");
@@ -75,6 +86,9 @@ public class MainApp  extends JPanel implements ActionListener {
         colorButtons();
     }
 
+    /**
+     * Sets the background color for various buttons.
+     */
     public void colorButtons(){
         Color buttonColorConfirm = new Color(0xD5F5E3);
         Color buttonColorCancel = new Color(0xFADBD8 );
@@ -97,6 +111,9 @@ public class MainApp  extends JPanel implements ActionListener {
         deleteWordButton.setBackground(buttonColorBlack);
         listEveryWordsButton.setBackground(buttonColorYellow);
     }
+    /**
+     * Initializes the main window and sets up the layout.
+     */
     public void main(){
         buttons();
         fields();
@@ -110,6 +127,9 @@ public class MainApp  extends JPanel implements ActionListener {
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main.setVisible(true);
     }
+    /**
+     * Initializes the add window and sets up the layout.
+     */
     public void add(){
         labels();
         fields();
@@ -122,6 +142,9 @@ public class MainApp  extends JPanel implements ActionListener {
         add.setVisible(true);
     }
 
+    /**
+     * Initializes the modify window and sets up the layout.
+     */
     public void modify(){
         labels();
         fields();
@@ -133,7 +156,9 @@ public class MainApp  extends JPanel implements ActionListener {
         modify.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         modify.setVisible(true);
     }
-
+    /**
+     * Sets the labels and their positions.
+     */
     public void labels(){
         label5.setBounds(15,25,70,15);
         label5.setBackground(Color.black);
@@ -147,6 +172,11 @@ public class MainApp  extends JPanel implements ActionListener {
         labely.setBackground(Color.black);
     }
 
+    /**
+     * Sets up the layout for the right panel.
+     *
+     * @return JPanel for the right panel layout.
+     */
     public JPanel rigth(){
         rigth.setBounds(752,4,228,503);
         rigth.setLayout((LayoutManager) null);
@@ -159,7 +189,11 @@ public class MainApp  extends JPanel implements ActionListener {
         rigth.setBackground(Color.WHITE);
         return rigth;
     }
-
+    /**
+     * Sets up the layout for the add window panel.
+     *
+     * @return JPanel for the add window panel layout.
+     */
     public JPanel panel(){
         panel5.setBounds(4,4,576,194);
         panel5.setLayout((LayoutManager) null);
@@ -175,6 +209,11 @@ public class MainApp  extends JPanel implements ActionListener {
         return panel5;
     }
 
+    /**
+     * Sets up the layout for the modify window panel.
+     *
+     * @return JPanel for the modify window panel layout.
+     */
     public JPanel panel6(){
         panel6.setBounds(4,4,576,194);
         panel6.setLayout((LayoutManager) null);
@@ -188,6 +227,11 @@ public class MainApp  extends JPanel implements ActionListener {
         return panel6;
     }
 
+    /**
+     * Sets up the layout for the up panel.
+     *
+     * @return JPanel for the up panel layout.
+     */
     public JPanel up(){
         up.setBounds(4,4,744,64);
         up.setLayout((LayoutManager) null);
@@ -197,6 +241,11 @@ public class MainApp  extends JPanel implements ActionListener {
         return up;
     }
 
+    /**
+     * Sets up the layout for the down panel.
+     *
+     * @return JPanel for the down panel layout.
+     */
     public JPanel down(){
         down.setBounds(4,72,744,435);
         down.setLayout((LayoutManager) null);
@@ -205,6 +254,9 @@ public class MainApp  extends JPanel implements ActionListener {
         return down;
     }
 
+    /**
+     * Sets up the buttons and their positions.
+     */
     public void buttons(){
         searchButton.setBounds(532,13,200,38);
         ShowListbyLetterButton.setBounds(15,210,200,38);
@@ -219,6 +271,11 @@ public class MainApp  extends JPanel implements ActionListener {
         cancelButtom.setBounds(15,140,250,40);
     }
 
+    /**
+     * Sets up the JScrollPane containing the word list.
+     *
+     * @return JScrollPane for the word list.
+     */
     public JScrollPane pane(){
         list.setModel(model);
         list.setBackground(Color.WHITE);
@@ -230,6 +287,9 @@ public class MainApp  extends JPanel implements ActionListener {
         return pane;
     }
 
+    /**
+     * Populates the word list with all words in the dictionary.
+     */
     public void all(){
         model.removeAllElements();
         for (int i = 0; i < DictionaryController.getTreeLetters().length; i++){
@@ -241,6 +301,9 @@ public class MainApp  extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Sets up the positions for text fields.
+     */
     public void fields(){
         field1.setBounds(13,13,510,39);
         field5.setBounds(78,20,200,30);
@@ -251,6 +314,11 @@ public class MainApp  extends JPanel implements ActionListener {
     }
 
 
+    /**
+     * Handles button click events and performs corresponding actions.
+     *
+     * @param e ActionEvent representing the button click event.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if( e.getSource() == searchButton){
