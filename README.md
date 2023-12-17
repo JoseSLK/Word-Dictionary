@@ -1,4 +1,5 @@
-#Word-Dictionary
-This is an example implementation of a Binary Tree.
-[View documentation](Documentation/index.html)
+# Word-Dictionary
+### This is an example implementation of a Binary Tree.
+### [View documentation](https://joseslk.github.io/Word-Dictionary/)
+
 
