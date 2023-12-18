@@ -13,7 +13,7 @@ public class InputValidator {
      * @return True if the string contains only letters, false otherwise.
      */
     public boolean onlyLetters(String word) {
-        if (word.contains("@") || word.contains("#") || word.contains("$")) {
+        if (word.contains("@") || word.contains("#") || word.contains("$") || word.contains("ñ")) {
             return false;
         }
 
