@@ -322,7 +322,10 @@ public class MainApp  extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if( e.getSource() == searchButton){
-            if( dic.getInputValidator().onlyContainsSpaces(field1.getText())){
+
+            if (!dic.getInputValidator().isValidWord(field1.getText())){
+                JOptionPane.showMessageDialog(null,"Digita una palabra valida");
+            }else if( dic.getInputValidator().onlyContainsSpaces(field1.getText())){
                 JOptionPane.showMessageDialog(null, "Hay campos vacios");
             }else {
                 String word = dic.getInputValidator().capitalizeFirstLetter(field1.getText());
