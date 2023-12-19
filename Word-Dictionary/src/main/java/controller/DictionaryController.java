@@ -118,16 +118,42 @@ public class DictionaryController {
      * Loads initial data into the dictionary.
      */
     public void loadData(){
-        getWordController().addWord("Manzanas", "Apples", "Son frutas");
-        getWordController().addWord("Naranjas", "Oranges", "Son cítricos");
-        getWordController().addWord("Plátanos", "Bananas", "Son amarillos");
-        getWordController().addWord("Fresas", "Strawberries", "Son rojas");
-        getWordController().addWord("Uvas", "Grapes", "Son moradas");
-        getWordController().addWord("Mangos", "Mangoes", "Son tropicales");
-        getWordController().addWord("Piñas", "Pineapples", "Son espinosas");
-        getWordController().addWord("Melones", "Melons", "Son jugosos");
-        getWordController().addWord("Sandías", "Watermelons", "Son refrescantes");
-        getWordController().addWord("Cerezas", "Cherries", "Son dulces");
+        getWordController().addWord("Aventura", "Adventure", "Exploración emocionante");
+        getWordController().addWord("Innovación", "Innovation", "Introducción de nuevas ideas");
+        getWordController().addWord("Creatividad", "Creativity", "Capacidad de crear algo nuevo");
+        getWordController().addWord("Conocimiento", "Knowledge", "Información y comprensión adquiridas");
+        getWordController().addWord("Fascinación", "Fascination", "Encanto o interés intenso");
+        getWordController().addWord("Serenidad", "Serenity", "Tranquilidad y calma profunda");
+        getWordController().addWord("Melodía", "Melody", "Secuencia armoniosa de sonidos");
+        getWordController().addWord("Euforia", "Euphoria", "Estado de alegría intensa");
+        getWordController().addWord("Resiliencia", "Resilience", "Capacidad de recuperarse frente a desafíos");
+        getWordController().addWord("Exploración", "Exploration", "Viaje para descubrir lo desconocido");
         getWordController().addWord("anon", "anon", "Es un anon");
+        getWordController().addWord("Arcoiris", "Rainbow", "Fenómeno óptico y meteorológico");
+        getWordController().addWord("Bosque", "Forest", "Área extensa con árboles y vegetación");
+        getWordController().addWord("Canción", "Song", "Composición musical con letra");
+        getWordController().addWord("Delfín", "Dolphin", "Mamífero marino inteligente");
+        getWordController().addWord("Elefante", "Elephant", "Mamífero de gran tamaño con trompa");
+        getWordController().addWord("Fotografía", "Photography", "Captura de imágenes con una cámara");
+        getWordController().addWord("Guitarra", "Guitar", "Instrumento musical de cuerdas");
+        getWordController().addWord("Helado", "Ice Cream", "Postre congelado y delicioso");
+        getWordController().addWord("Isla", "Island", "Área de tierra rodeada de agua");
+        getWordController().addWord("Jardín", "Garden", "Área cultivada con plantas");
+        getWordController().addWord("Kangaroo", "Canguro", "Mamífero marsupial saltador");
+        getWordController().addWord("Luna", "Moon", "Satélite natural de la Tierra");
+        getWordController().addWord("Montaña", "Mountain", "Elevación natural de la tierra");
+        getWordController().addWord("Nube", "Cloud", "Agregado visible de gotas de agua o cristales de hielo");
+        getWordController().addWord("Océano", "Ocean", "Extensión grande de agua salada");
+        getWordController().addWord("Piano", "Piano", "Instrumento musical de teclado");
+        getWordController().addWord("Quasar", "Quásar", "Objeto astronómico extremadamente brillante");
+        getWordController().addWord("Río", "River", "Corriente natural de agua");
+        getWordController().addWord("Sol", "Sun", "Estrella central de nuestro sistema solar");
+        getWordController().addWord("Tigre", "Tiger", "Gran felino rayado");
+        getWordController().addWord("Universo", "Universe", "Todo lo que existe, incluyendo espacio y tiempo");
+        getWordController().addWord("Violeta", "Violet", "Color entre azul y púrpura");
+        getWordController().addWord("Waterfall", "Cascada", "Caída de agua natural");
+        getWordController().addWord("Xylophone", "Xilófono", "Instrumento musical de percusión");
+        getWordController().addWord("Yoga", "Yoga", "Práctica física y mental");
+        getWordController().addWord("Zafiro", "Sapphire", "Gema preciosa de color azul");
     }
 }
